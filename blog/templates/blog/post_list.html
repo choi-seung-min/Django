@@ -8,17 +8,12 @@
             <h1><a href="">Sample blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 20.01.2020, 14:37</p>
-            <h2><a href="">First post</a></h2>
-            <p><strong>POWEEEEEEEEER!!!!!!!</strong></p>
-        </div>
-
-
-        <div>
-            <p>published: 20.01.2020, 14:37</p>
-            <h2><a href="">Second post</a></h2>
-            <p><strong>POWEEEEEERRRRRRR!!!!!!!</strong></p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
